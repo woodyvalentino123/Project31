@@ -11,7 +11,7 @@ class Division {
         World.add(world,this.body)
 
     }
-    display(){
+    display([i]){
         var pos = this.body.position;
         push();
         rectMode(CENTER);

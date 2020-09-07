@@ -10,7 +10,7 @@ class Plinko{
        World.add(world,this.body)
 
     }
-    display(){
+    display([p]){
         var pos = this.body.position;
         push();
         ellipseMode(CENTER);
