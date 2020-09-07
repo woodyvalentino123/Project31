@@ -59,10 +59,10 @@ function draw() {
   for (i = 1; i<= division.lenght; i = i+1){
  division.display([i]);
   }
-  for (j = 1; j<= division.lenght; j = j+1){
+  for (j = 1; j<= particles.lenght; j = j+1){
   particles.display([j]);
   }
-  for (p = 1; p<= division.lenght; p = p+1){
+  for (p = 1; p<= plinkos.lenght; p = p+1){
   plinkos.display([p]);
   }
 
