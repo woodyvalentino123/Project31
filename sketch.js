@@ -1,24 +1,56 @@
+
 const Engine = Matter.Engine;
 const World = Matter.World;
-const Body = Matter.Bodies;
-var engine,world,d1,ground;
+const Bodies = Matter.Bodies;
+const Body = Matter.Body;
+const Constraint = Matter.Constraint;
+var particles = [];
+var plinkos = [];
+var divisions = [];
+var divisionHeight = 300;
 
 
+var ground;
 
-function setup() {
-  createCanvas(800,400);
-  createSprite(400, 200, 50, 50);
-  engine = Engine.create();
-  world = engine.world
-  ground = new Ground(400,380,800,30);
-  d1 = new Division(100,390)
+function preload()
+{
+	
 }
 
-function draw() {
-  background(255,255,255);  
-  Engine.update(engine);
-  drawSprites();
-  ground.display();
-  d1.display();
+function setup() {
+	createCanvas(480, 800);
+	engine = Engine.create();
+	world = engine.world;
+
+  //Create the Bodies Here.
   
+     ground = new Ground(240,790);
+       
+     ground1 = new Ground(240,770);
+    
+     division = new Division(50,610,2,divisionHeight);
+
+     for (var k=0; k<=width;k = k+80){
+    division.push(new Division(k,height+divisionHeight/2,10,divisionHeight))
+     }
+     
+
+
+
+
+	Engine.run(engine);
+  
+}
+
+
+function draw() {
+  rectMode(CENTER);
+  background("black");
+  ground.display();
+  ground1.display1();
+  division.display();
+
+  
+  drawSprites();
+ 
 }
