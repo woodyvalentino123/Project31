@@ -26,10 +26,8 @@ function setup() {
   //Create the Bodies Here.
   
      ground = new Ground(240,790);
-       
      ground1 = new Ground(240,770);
-     
-    
+        
     // division = new Division(50,610,2,divisionHeight);
 
      for (var k=0; k<=width;k = k+80){
@@ -41,11 +39,7 @@ function setup() {
 
       for (var m=0; m<=700;m = m+1){
         particles.push(new Particle(m,1,10))
-         }
-
-
-
-
+      }
 	Engine.run(engine);
   
 }
