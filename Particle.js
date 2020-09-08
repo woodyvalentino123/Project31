@@ -1,18 +1,19 @@
 class Particle{
     cosntructor(x,y,radius){
         var options ={
-            isStatic:true
+           restitution:0.01
+
     }
     this.body = Bodies.circle(x,y,radius,options);
     this.color = color(random(0,255),random(0,255),random(0,255));
 
     this.radius = radius;
-    World(world,this.body)
+    World.add(world,this.body)
 }
-display([j]){
+display(){
     var pos = this.body.position;
     push();
-    ellipseMode(CENTER);
+    ellipseMode(RADIUS);
     fill(this.color)
     ellipse(pos.x,pos.y,this.radius,20)
 }
