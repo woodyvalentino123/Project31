@@ -27,29 +27,32 @@ function setup() {
   
      ground = new Ground(240,790);
      ground1 = new Ground(240,770);
+     
+     
         
      
 
      for (var k=-75; k<width;k = k+80){
-    division.push(new Division(k,height-divisionHeight/2,10,divisionHeight))
+    division.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
      }
-     for (var l=-40; l<=width;l = l+50){
+     for (var l=-40; l<=width-10; l = l+50){
       plinkos.push(new Plinko(l,75,radius))
       }
 
       for (var l=40; l<=width-10;l = l+50){
-        plinkos.push(new Plinko(l,175,10))
+        plinkos.push(new Plinko(l,175,radius))
       }
       for (var l=-40; l<=width;l = l+50){
         plinkos.push(new Plinko(l,275,radius))
         }
   
         for (var l=40; l<=width-10;l = l+50){
-          plinkos.push(new Plinko(l,375,10))
+          plinkos.push(new Plinko(l,375,radius))
         }
         
       
-	Engine.run(engine);
+  Engine.run(engine);
+  
   
 }
 
@@ -57,8 +60,10 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background("black");
+  Engine.update(engine);
   ground.display();
   ground1.display1();
+  
   for (var i = 1; i< division.length; i = i+1){
     console.log([i]);
     division[i].display();
