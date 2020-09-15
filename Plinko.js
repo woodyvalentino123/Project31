@@ -1,7 +1,8 @@
 class Plinko{
     constructor (x,y,radius){
         var options = {
-            isStatic:true
+            isStatic:true,
+            
         }
         
        this.body = Bodies.circle(x,y,radius,options);
@@ -13,9 +14,8 @@ class Plinko{
     display(){
         var pos = this.body.position;
         push();
-        ellipseMode(RADIUS);
+        ellipseMode(CENTER);
        
         ellipse(pos.x,pos.y,this.radius,20)
-        pop();
     }
 }
